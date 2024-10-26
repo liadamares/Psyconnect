@@ -1,0 +1,7 @@
+{
+  "name": "psyconnect",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
