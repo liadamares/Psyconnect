@@ -1,0 +1,36 @@
+/* global.scss */
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+ion-content {
+  --padding-top: 20px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --background: #f8f9fa;
+}
+
+ion-item {
+  --border-color: #dcdcdc;
+  --padding-start: 12px;
+  margin-bottom: 12px;
+}
+
+ion-label {
+  color: #333;
+  font-weight: bold;
+}
+
+ion-input, ion-datetime, ion-select {
+  --color: #333;
+  --placeholder-color: #aaa;
+}
+
+ion-button {
+  --background: #4a90e2;
+  --background-activated: #357ABD;
+  border-radius: 8px;
+  padding: 10px 16px;
+}

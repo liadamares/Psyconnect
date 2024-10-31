@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> 
+    </ion-buttons>
+    <ion-title>Dashboard do Professor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content class="ion-padding dashboard-content">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Calendário de Agendamentos</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="calendar">
+          <div class="calendar-header">
+            <span>Dom</span>
+            <span>Seg</span>
+            <span>Ter</span>
+            <span>Qua</span>
+            <span>Qui</span>
+            <span>Sex</span>
+            <span>Sáb</span>
+          </div>
+          <div class="calendar-days">
+            <div class="day" *ngFor="let day of days" (click)="expandDay(day)">
+              <span>{{ day }}</span>
+              <div class="appointments" *ngIf="selectedDate === day">
+                <div *ngFor="let appointment of appointments[day]">
+                  <p>{{ appointment.details }} - {{ appointment.time }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

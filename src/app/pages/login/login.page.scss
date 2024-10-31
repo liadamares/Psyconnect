@@ -1,0 +1,29 @@
+/* global.scss */
+ion-header {
+  background-color: #3880c7;
+  color: white;
+}
+
+.login-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+ion-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-button {
+  margin-top: 20px;
+  --background: #3880c7;
+  --color: white;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

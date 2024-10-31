@@ -1,0 +1,53 @@
+.dashboard-content {
+  .calendar {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 8px;
+
+      span {
+        flex: 1;
+        text-align: center;
+        font-weight: bold;
+        color: #333;
+      }
+    }
+
+    .calendar-days {
+      display: flex;
+      flex-wrap: wrap;
+
+      .day {
+        flex: 1 0 14%;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #e3f2fd;
+        }
+
+        &.active {
+          background-color: #bbdefb;
+        }
+
+        .appointments {
+          margin-top: 10px;
+          background-color: #f9f9f9;
+          border-radius: 4px;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}

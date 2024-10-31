@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>CADASTRO DE ALUNOS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="alunoForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+
+
+      <ion-item>
+        <ion-label position="floating">Nome do Aluno</ion-label>
+        <ion-input formControlName="nomeAluno"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Endereço</ion-label>
+        <ion-input formControlName="endereco"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Turma</ion-label>
+        <ion-input formControlName="turma"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Data de Nascimento</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" formControlName="dataNascimento"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Tipo de Transtorno</ion-label>
+        <ion-input formControlName="transtorno"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Dificuldades</ion-label>
+        <ion-input formControlName="dificuldades"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="floating">Nome do Responsável</ion-label>
+        <ion-input formControlName="nomeResponsavel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Idade do Responsável</ion-label>
+        <ion-input formControlName="idadeResponsavel" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">CPF do Responsável</ion-label>
+        <ion-input formControlName="cpfResponsavel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email do Responsável</ion-label>
+        <ion-input formControlName="emailResponsavel" type="email"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="floating">Dias de Atendimento</ion-label>
+        <ion-select formControlName="diasAtendimento" multiple="true">
+          <ion-select-option *ngFor="let dia of diasSemana" [value]="dia">{{ dia }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Horário de Atendimento</ion-label>
+        <ion-select formControlName="horarioAtendimento">
+          <ion-select-option *ngFor="let horario of horarios" [value]="horario">{{ horario }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="floating">Laudo Médico</ion-label>
+        <ion-input type="file" (change)="onFileSelected($event)"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" type="submit" [disabled]="!alunoForm.valid">Cadastrar</ion-button>
+    </ion-list>
+  </form>
+</ion-content>

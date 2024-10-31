@@ -1,3 +1,25 @@
+<!-- src/app/app.component.html -->
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="main-content">
+    <!-- Menu lateral -->
+    <ion-menu contentId="main-content">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item routerLink="/alunocadastro" routerDirection="root">Cadastro de Alunos</ion-item>
+          <ion-item routerLink="/agendamentos" routerDirection="root">Agendamentos</ion-item>
+          <ion-item routerLink="/relatorios" routerDirection="root">Relatórios</ion-item>
+          <ion-item routerLink="/perfil" routerDirection="root">Lista de alunos</ion-item>
+          <ion-item (click)="logout()">Sair</ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <!-- Conteúdo principal -->
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>

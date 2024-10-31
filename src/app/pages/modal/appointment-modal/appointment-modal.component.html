@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalhes do Agendamento</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="modal-content" *ngIf="appointment">
+    <h2>{{ appointment.details }}</h2>
+    <p>Horário: {{ appointment.time }}</p>
+    <p>Alunos: {{ appointment.students.join(', ') }}</p>
+  </div>
+</ion-content>

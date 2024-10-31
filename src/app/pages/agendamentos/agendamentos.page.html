@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> 
+    </ion-buttons>
+    <ion-title>Agendamento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="searchAppointments()" placeholder="Pesquisar Aluno..."></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let appointment of appointments">
+      <ion-label>
+        <h2>{{ appointment.details }}</h2>
+        <p>Horário: {{ appointment.time }}</p>
+        <p>Alunos: {{ appointment.students.join(', ') }}</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="editAppointment(appointment)">Editar</ion-button>
+        <ion-button (click)="deleteAppointment(appointment)">Excluir</ion-button>
+        <ion-button (click)="openModal(appointment)">Ver Detalhes</ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>
