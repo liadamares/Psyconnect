@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private router: Router) {}
+  isProfessor = false;
+  isResponsavel = false;
+
+  constructor(private authService: AuthService) {
+    this.authService.userRole$.subscribe(role => {
+      this.isProfessor = role === 'professor';
+      this.isResponsavel = role === 'responsavel';
+    });
+  }
 
   logout() {
-
-    this.router.navigate(['/login']);
+    this.authService.logout();
   }
 }

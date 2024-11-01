@@ -10,6 +10,10 @@ const routes: Routes = [
   { path: 'login', component: LoginPage },
   { path: 'alunoCadastro', component: AlunoCadastroPage, canActivate: [AuthGuard] },
   { path: 'agendamentos', component: AgendamentosPage, canActivate: [AuthGuard] },
+  {
+    path: 'responsavel',
+    loadChildren: () => import('./pages/responsavel/responsavel.module').then( m => m.ResponsavelPageModule)
+  },
 ];
 
 @NgModule({

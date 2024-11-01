@@ -1,0 +1,30 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Dashboard do Responsável</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="appointments.length > 0; else noAppointments">
+    <ion-item *ngFor="let appointment of appointments">
+      <ion-label>
+        <h2>{{ appointment.details }}</h2>
+        <p>Horário: {{ appointment.time }}</p>
+        <p>Alunos: {{ appointment.students.join(', ') }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noAppointments>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Nenhum Atendimento Agendado</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Não há atendimentos agendados para os alunos.
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+</ion-content>
+

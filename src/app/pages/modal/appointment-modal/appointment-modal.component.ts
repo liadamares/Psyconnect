@@ -8,14 +8,15 @@ import { Appointment } from '../../models/appointment.model';
   styleUrls: ['./appointment-modal.component.scss'],
 })
 export class AppointmentModalComponent implements OnInit {
-  @Input() appointment: Appointment | undefined; 
+  @Input() appointment: Appointment | undefined;
 
   constructor(private modalController: ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
   dismiss() {
     this.modalController.dismiss();
   }
 }
-

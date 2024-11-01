@@ -1,7 +1,7 @@
 <!-- src/app/app.component.html -->
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <!-- Menu lateral -->
+
     <ion-menu contentId="main-content">
       <ion-header>
         <ion-toolbar color="primary">
@@ -10,16 +10,25 @@
       </ion-header>
       <ion-content>
         <ion-list>
-          <ion-item routerLink="/alunocadastro" routerDirection="root">Cadastro de Alunos</ion-item>
-          <ion-item routerLink="/agendamentos" routerDirection="root">Agendamentos</ion-item>
-          <ion-item routerLink="/relatorios" routerDirection="root">Relatórios</ion-item>
-          <ion-item routerLink="/perfil" routerDirection="root">Lista de alunos</ion-item>
+
+          <ng-container *ngIf="isProfessor">
+            <ion-item routerLink="/Alunocadastro" routerDirection="root">Cadastro de Alunos</ion-item>
+            <ion-item routerLink="/Agendamentos" routerDirection="root">Agendamentos</ion-item>
+            <ion-item routerLink="/Relatórios" routerDirection="root">Relatórios</ion-item>
+
+          </ng-container>
+
+          <ng-container *ngIf="isResponsavel">
+            <ion-item routerLink="/responsavel" routerDirection="root">Dashboard</ion-item>
+            <ion-item routerLink="/atendimentos" routerDirection="root">Atendimentos</ion-item>
+          </ng-container>
+
           <ion-item (click)="logout()">Sair</ion-item>
         </ion-list>
       </ion-content>
     </ion-menu>
 
-    <!-- Conteúdo principal -->
+
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>

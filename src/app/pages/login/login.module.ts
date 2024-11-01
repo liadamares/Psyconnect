@@ -10,9 +10,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule, 
+    IonicModule,
     RouterModule.forChild([{ path: '', component: LoginPage }])
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA] // Adiciona o CUSTOM_ELEMENTS_SCHEMA
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class LoginPageModule {}

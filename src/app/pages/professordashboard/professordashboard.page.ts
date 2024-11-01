@@ -10,20 +10,20 @@ import { Appointment } from '../models/appointment.model';
 })
 export class ProfessordashboardPage implements OnInit {
   days: string[] = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'];
-  selectedDate: string | null = null; // Para guardar a data selecionada
-  appointments: { [key: string]: Appointment[] } = {}; // Dicionário para armazenar agendamentos por dia
+  selectedDate: string | null = null;
+  appointments: { [key: string]: Appointment[] } = {};
 
   constructor(private appointmentService: AppointmentService) {}
 
   ngOnInit() {
-    this.loadAppointments(); // Carrega os agendamentos ao iniciar
+    this.loadAppointments();
   }
 
   loadAppointments() {
-    // Inicializa os agendamentos
+   
     const allAppointments = this.appointmentService.getAppointments();
     allAppointments.forEach(appointment => {
-      const day = this.getDayFromTime(appointment.time); // Implementar esta função para mapear o horário para um dia específico
+      const day = this.getDayFromTime(appointment.time);
       if (!this.appointments[day]) {
         this.appointments[day] = [];
       }
@@ -32,17 +32,16 @@ export class ProfessordashboardPage implements OnInit {
   }
 
   expandDay(day: string) {
-    this.selectedDate = this.selectedDate === day ? null : day; // Alterna a exibição dos agendamentos
+    this.selectedDate = this.selectedDate === day ? null : day;
   }
 
   logout() {
-    // Lógica para logout
+
     console.log('Logout realizado');
   }
 
   private getDayFromTime(time: string): string {
-    // Esta função deve retornar o dia baseado no horário ou uma lógica que você tenha para os dias
-    // Exemplo simples (substitua pela sua lógica):
-    return this.days[new Date().getDay()]; // Retorna o dia atual
+
+    return this.days[new Date().getDay()];
   }
 }

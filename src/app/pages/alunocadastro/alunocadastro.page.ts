@@ -35,7 +35,7 @@ export class AlunoCadastroPage {
     if (this.alunoForm.valid) {
       const formData = this.alunoForm.value;
       console.log('Dados do Aluno:', formData);
-     // salvar os dados ou enviar ao backend
+      
     }
   }
 
