@@ -20,7 +20,6 @@ export class AppointmentService {
   }
 }
 
-// src/app/models/appointment.model.ts
 export interface Appointment {
   id: number; //
   details: string;
